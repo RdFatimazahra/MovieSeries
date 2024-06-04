@@ -6,7 +6,7 @@ MovieSeries App est une application web conçue pour gérer une vaste collection
 <img width="552" alt="image" src="https://github.com/RdFatimazahra/MovieSeries/assets/157012170/e9bfd388-8f0e-45d9-b648-83497bc71736">
 
 <h3>Diagramme de classe</h3>
-<img width="341" alt="image" src="https://github.com/RdFatimazahra/MovieSeries/assets/157012170/3e7f858c-49fd-4879-bca4-e1d434e8cfc9">
+<img width="526" alt="image" src="https://github.com/RdFatimazahra/MovieSeries/assets/157012170/d1e5228d-6c15-4751-bfdc-3c996ea6548a">
 
 <h3>Diagramme de séquence</h3>
 <img width="560" alt="image" src="https://github.com/RdFatimazahra/MovieSeries/assets/157012170/e3fadafc-643a-4c3d-931b-9d6a5ba7a7ef">

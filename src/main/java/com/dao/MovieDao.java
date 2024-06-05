@@ -1,21 +1,12 @@
 package com.dao;
 
-import com.model.Serie;
+import com.model.Movie;
+import java.util.List;
 
-public class MovieDao {
-    /**
-     * Hello world!
-     *
-     */
-    public static class app
-    {
-        public static void main( String[] args )
-        {
-            System.out.println( "Hello World!" );
-            Serie produit= new Serie();
-            Serie.
-                      SerieDao produitRepository=new SerieRepository();
-            produitRepository.ajouterSerie(Serie);
-        }
-    }
+public interface MovieDao {
+    void save(Movie movie);
+    void update(Movie movie);
+    void delete(Long id);
+    Movie findById(Long id);
+    List<Movie> findAll();
 }

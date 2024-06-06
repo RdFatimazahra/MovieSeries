@@ -1,6 +1,6 @@
 package com.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "films")
@@ -10,30 +10,27 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idMovie;
 
-    @Column(nullable = false)
+
     private String titre;
 
-    @Column(nullable = false, length = 1000)
+
     private String description;
 
-    @Column(name = "dateSortie", nullable = false)
     private String dateSortie;
 
-    @Column(nullable = false)
+
     private int duree;
 
-
-    @Column(nullable = false)
     private String genre;
 
-    @Column(nullable = false)
     private String realisateur;
 
-    @Column(nullable = false)
+
     private String acteurs;
 
-    @Column(nullable = false)
     private double note;
+
+    private String image;
 
     // Getters and Setters
     public Long getId() {
@@ -107,5 +104,12 @@ public class Movie {
     public void setNote(double note) {
         this.note = note;
     }
-}
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+}

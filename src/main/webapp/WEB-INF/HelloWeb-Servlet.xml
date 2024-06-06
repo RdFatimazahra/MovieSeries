@@ -19,5 +19,6 @@
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp" />
     </bean>
+    <bean id="message" class="com.service.MovieService"> </bean>
 
 </beans>

@@ -33,6 +33,7 @@ public class Serie {
     private Float note;
 
     private String createur;
+    private String image;
 
 
 
@@ -125,7 +126,11 @@ public class Serie {
     public void setCreateur(String createur) {
         this.createur = createur;
     }
+
+    public String getImage() {
+        return image;
+    }
+    public void setImage(String image) {
+        this.image = image;
+    }
 }
-
-
-

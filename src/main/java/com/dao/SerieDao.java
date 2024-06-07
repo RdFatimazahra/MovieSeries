@@ -1,4 +1,8 @@
 package com.dao;
 
-public class SerieDao {
+import com.model.Serie;
+
+public interface SerieDao {
+    Serie ajouterSerie(Serie serie);
+    void close();
 }

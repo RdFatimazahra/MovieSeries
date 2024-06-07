@@ -27,6 +27,14 @@ public class MovieDaoImpl implements MovieDao {
         return movie;
     }
 
+    @Override
+    public Movie modifierMovie(Movie movie) {
+        entityManager.getTransaction().begin();
+        entityManager.merge(movie);
+        entityManager.getTransaction().commit();
+        return movie;
+    }
+
     // Autres méthodes CRUD à implémenter
 
     public void close() {

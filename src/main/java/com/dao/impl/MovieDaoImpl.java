@@ -43,6 +43,16 @@ public class MovieDaoImpl implements MovieDao {
         return movie;
     }
 
+    @Override
+    public void supprimerMovie(Long id) {
+        entityManager.getTransaction().begin();
+        Movie movie = entityManager.find(Movie.class, id);
+        if (movie != null) {
+            entityManager.remove(movie);
+        }
+        entityManager.getTransaction().commit();
+    }
+
     // Autres méthodes CRUD à implémenter
 
     public void close() {

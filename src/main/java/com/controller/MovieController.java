@@ -60,8 +60,8 @@ public class MovieController {
         return "listMovies"; // Assurez-vous que le nom du fichier JSP est "listMovies.jsp"
     }
     @PostMapping("/deleteMovie")
-    public String deleteMovie(@RequestParam("id") Long id, Model model) {
-        movieService.deleteMovieById(id);
+    public String deleteMovie(@RequestParam("id") Long id) {
+        movieService.supprimerMovie(id);
         return "redirect:/movies/list";
     }
 

@@ -5,10 +5,7 @@ import com.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -60,8 +57,21 @@ public class MovieController {
         return "listMovies"; // Assurez-vous que le nom du fichier JSP est "listMovies.jsp"
     }
     @PostMapping("/deleteMovie")
-    public String deleteMovie(@RequestParam("id") Long id, Model model) {
-        movieService.deleteMovieById(id);
+    public String deleteMovie(@RequestParam("id") Long id) {
+        movieService.supprimerMovie(id);
+        return "redirect:/movies/list";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String showEditMovieForm(@PathVariable Long id, Model model) {
+        Movie movie = movieService.getMovieById(id);
+        model.addAttribute("movie", movie);
+        return "editMovie";
+    }
+
+    @PostMapping("/edit")
+    public String editMovie(@ModelAttribute Movie movie) {
+        movieService.modifierMovie(movie);
         return "redirect:/movies/list";
     }
 

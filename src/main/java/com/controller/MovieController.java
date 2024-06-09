@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/movies")
 public class MovieController {
@@ -51,4 +53,16 @@ public class MovieController {
         model.addAttribute("message", "Film ajouté avec succès");
         return "redirect:/movies/create";
     }
+    @GetMapping("/list")
+    public String listMovies(Model model) {
+        List<Movie> movies = movieService.getAllMovies();
+        model.addAttribute("movies", movies);
+        return "listMovies"; // Assurez-vous que le nom du fichier JSP est "listMovies.jsp"
+    }
+    @PostMapping("/deleteMovie")
+    public String deleteMovie(@RequestParam("id") Long id, Model model) {
+        movieService.deleteMovieById(id);
+        return "redirect:/movies/list";
+    }
+
 }

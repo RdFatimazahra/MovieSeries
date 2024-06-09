@@ -4,6 +4,8 @@ import com.dao.MovieDao;
 import com.dao.impl.MovieDaoImpl;
 import com.model.Movie;
 
+import java.util.List;
+
 public class MovieService {
 
     private MovieDao movieDao;
@@ -14,6 +16,10 @@ public class MovieService {
 
     public Movie ajouterMovie(Movie movie) {
         return movieDao.ajouterMovie(movie);
+    }
+
+    public List<Movie> getAllMovies() {
+        return movieDao.getAllMovies();
     }
 
     // Autres méthodes de service à implémenter

@@ -3,7 +3,7 @@ package com.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "films")
+@Table(name = "movie")
 public class  Movie {
 
     @Id
@@ -111,5 +111,21 @@ public class  Movie {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "idMovie=" + idMovie +
+                ", titre='" + titre + '\'' +
+                ", description='" + description + '\'' +
+                ", dateSortie='" + dateSortie + '\'' +
+                ", duree=" + duree +
+                ", genre='" + genre + '\'' +
+                ", realisateur='" + realisateur + '\'' +
+                ", acteurs='" + acteurs + '\'' +
+                ", note=" + note +
+                ", image='" + image + '\'' +
+                '}';
     }
 }

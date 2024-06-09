@@ -5,6 +5,8 @@ import com.model.Movie;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+import java.util.List;
 
 public class MovieDaoImpl implements MovieDao {
 
@@ -25,6 +27,12 @@ public class MovieDaoImpl implements MovieDao {
         entityManager.persist(movie);
         entityManager.getTransaction().commit();
         return movie;
+    }
+
+    @Override
+    public List<Movie> getAllMovies() {
+//        System.out.println(entityManager.createQuery("SELECT m FROM Movie m", Movie.class).getResultList());
+        return entityManager.createQuery("SELECT m FROM Movie m", Movie.class).getResultList();
     }
 
     @Override

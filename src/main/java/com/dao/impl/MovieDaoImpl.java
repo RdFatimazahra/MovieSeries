@@ -36,14 +36,6 @@ public class MovieDaoImpl implements MovieDao {
     }
 
     @Override
-    public Movie modifierMovie(Movie movie) {
-        entityManager.getTransaction().begin();
-        entityManager.merge(movie);
-        entityManager.getTransaction().commit();
-        return movie;
-    }
-
-    @Override
     public void supprimerMovie(Long id) {
         entityManager.getTransaction().begin();
         Movie movie = entityManager.find(Movie.class, id);
@@ -51,6 +43,19 @@ public class MovieDaoImpl implements MovieDao {
             entityManager.remove(movie);
         }
         entityManager.getTransaction().commit();
+    }
+
+
+    public Movie getMovieById(Long id) {
+        return entityManager.find(Movie.class, id);
+    }
+
+    @Override
+    public Movie modifierMovie(Movie movie) {
+        entityManager.getTransaction().begin();
+        Movie updatedMovie = entityManager.merge(movie);
+        entityManager.getTransaction().commit();
+        return updatedMovie;
     }
 
     // Autres méthodes CRUD à implémenter

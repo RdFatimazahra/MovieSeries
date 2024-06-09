@@ -61,7 +61,7 @@
         <td><%= movie.getNote() %></td>
         <td><img src="<%= movie.getImage() %>" alt="Image de <%= movie.getTitre() %>"></td>
         <td class="actions">
-            <a href="editMovie.jsp?id=<%= movie.getId() %>">Modifier</a>
+            <a href="edit?id=<%= movie.getId() %>">Modifier</a>
             <form action="deleteMovie" method="post" style="display:inline;">
                 <input type="hidden" name="id" value="<%= movie.getId() %>">
                 <button type="submit">Supprimer</button>

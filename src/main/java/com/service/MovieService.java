@@ -26,5 +26,15 @@ public class MovieService {
         movieDao.supprimerMovie(id);
     }
 
+    public Movie getMovieById(Long id) {
+        return movieDao.getMovieById(id);
+    }
+
+
+    public Movie modifierMovie(Movie movie) {
+        return movieDao.modifierMovie(movie);
+    }
+
+
     // Autres méthodes de service à implémenter
 }

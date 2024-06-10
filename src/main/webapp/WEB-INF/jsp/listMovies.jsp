@@ -61,8 +61,7 @@
         <td><%= movie.getNote() %></td>
         <td><img src="<%= movie.getImage() %>" alt="Image de <%= movie.getTitre() %>"></td>
         <td class="actions">
-            <a href="edit?id=<%= movie.getId() %>">Modifier</a>
-            <form action="deleteMovie" method="post" style="display:inline;">
+            <a href="/MovieApp_war_exploded/movies/edit/<%= movie.getId() %>">Modifier</a>            <form action="deleteMovie" method="post" style="display:inline;">
                 <input type="hidden" name="id" value="<%= movie.getId() %>">
                 <button type="submit">Supprimer</button>
             </form>
@@ -81,6 +80,6 @@
     </tbody>
 </table>
 <br>
-<a href="jsp/addMovie.jsp">Ajouter un nouveau film</a> <!-- Lien mis à jour -->
+<a href="create">Ajouter un nouveau film</a> <!-- Lien mis à jour -->
 </body>
 </html>

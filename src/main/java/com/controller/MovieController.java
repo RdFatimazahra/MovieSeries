@@ -48,7 +48,7 @@ public class MovieController {
         movieService.ajouterMovie(movie);
 
         model.addAttribute("message", "Film ajouté avec succès");
-        return "redirect:/movies/create";
+        return "redirect:/movies/list";
     }
     @GetMapping("/list")
     public String listMovies(Model model) {
@@ -63,10 +63,11 @@ public class MovieController {
     }
 
     @GetMapping("/edit/{id}")
-    public String showEditMovieForm(@PathVariable Long id, Model model) {
+    public String showEditMovieForm(@PathVariable("id") Long id, Model model) {
+        System.out.println("Editing movie with ID: " + id);
         Movie movie = movieService.getMovieById(id);
         model.addAttribute("movie", movie);
-        return "editMovie";
+        return "editMovie"; // Nom de la vue JSP (editMovie.jsp)
     }
 
     @PostMapping("/edit")
@@ -74,5 +75,7 @@ public class MovieController {
         movieService.modifierMovie(movie);
         return "redirect:/movies/list";
     }
+
+
 
 }

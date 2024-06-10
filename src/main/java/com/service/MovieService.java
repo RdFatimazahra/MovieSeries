@@ -31,8 +31,8 @@ public class MovieService {
     }
 
 
-    public Movie modifierMovie(Movie movie) {
-        return movieDao.modifierMovie(movie);
+    public void modifierMovie(Movie movie) {
+        movieDao.modifierMovie(movie);
     }
 
 
